@@ -1,0 +1,137 @@
+{
+	"info": {
+		"name": "Spring-boot",
+		"_postman_id": "9a7bce5d-6b5c-c600-37e3-d47942bedfcb",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all topics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/topics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topics"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get topic by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/topic/spring",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topic",
+						"spring"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Insert a Topic",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"javaee\",\n\t\"name\": \"Enterprise Java\",\n\t\"description\": \"Enterprise Java Description\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/topics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topics"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Modify Topic",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"javascript\",\n    \"name\": \"Javascript Updated\",\n    \"description\": \"Updated Javascirpt Description\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/topics/javascript",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topics",
+						"javascript"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Topic",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/topics/javascript1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topics",
+						"javascript1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
