@@ -1,28 +1,19 @@
 {
+	"variables": [],
 	"info": {
 		"name": "Spring-boot",
-		"_postman_id": "9a7bce5d-6b5c-c600-37e3-d47942bedfcb",
+		"_postman_id": "5bfb23d4-8e08-a78e-65fb-5599828e72f8",
 		"description": "",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Get all topics",
 			"request": {
+				"url": "http://localhost:8081/topics",
 				"method": "GET",
 				"header": [],
 				"body": {},
-				"url": {
-					"raw": "http://localhost:8080/topics",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"topics"
-					]
-				},
 				"description": ""
 			},
 			"response": []
@@ -30,20 +21,12 @@
 		{
 			"name": "Get topic by Id",
 			"request": {
+				"url": "http://localhost:8080/topic/spring",
 				"method": "GET",
 				"header": [],
-				"body": {},
-				"url": {
-					"raw": "http://localhost:8080/topic/spring",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"topic",
-						"spring"
-					]
+				"body": {
+					"mode": "raw",
+					"raw": ""
 				},
 				"description": ""
 			},
@@ -52,27 +35,18 @@
 		{
 			"name": "Insert a Topic",
 			"request": {
+				"url": "http://localhost:8081/topics",
 				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json"
+						"value": "application/json",
+						"description": ""
 					}
 				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n\t\"id\": \"javaee\",\n\t\"name\": \"Enterprise Java\",\n\t\"description\": \"Enterprise Java Description\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:8080/topics",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"topics"
-					]
 				},
 				"description": ""
 			},
@@ -81,28 +55,18 @@
 		{
 			"name": "Modify Topic",
 			"request": {
+				"url": "http://localhost:8081/topics/java",
 				"method": "PUT",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json"
+						"value": "application/json",
+						"description": ""
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": \"javascript\",\n    \"name\": \"Javascript Updated\",\n    \"description\": \"Updated Javascirpt Description\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:8080/topics/javascript",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"topics",
-						"javascript"
-					]
+					"raw": "{\n\t\"id\": \"java\",\n\t\"name\": \"Java Name\",\n\t\"description\": \"Java Description\"\n}"
 				},
 				"description": ""
 			},
@@ -111,23 +75,74 @@
 		{
 			"name": "Delete Topic",
 			"request": {
+				"url": "http://localhost:8080/topics/javascript1",
 				"method": "DELETE",
 				"header": [],
 				"body": {
 					"mode": "raw",
 					"raw": ""
 				},
-				"url": {
-					"raw": "http://localhost:8080/topics/javascript1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"topics",
-						"javascript1"
-					]
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get All courses",
+			"request": {
+				"url": "http://localhost:8081/topics/java/courses",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Insert course",
+			"request": {
+				"url": "http://localhost:8081/topics/java/courses",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"java-streams\",\n    \"name\": \"Java Streams\",\n    \"description\": \"Java Streams Description\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Course by Id",
+			"request": {
+				"url": "http://localhost:8081/topics/java/courses/java-streams",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update Course",
+			"request": {
+				"url": "http://localhost:8081/topics/java/courses/java-streams",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"java-streams\",\n    \"name\": \"Java Streams II\",\n    \"description\": \"Java Streams Description\",\n    \"topic\": {\n        \"id\": \"java\",\n        \"name\": \"Java Name\",\n        \"description\": \"Java Description\"\n    }\n}"
 				},
 				"description": ""
 			},
